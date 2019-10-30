@@ -14,6 +14,14 @@ steps:
     versionSpec: '3.6'
     architecture: 'x64'
 
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: 'f6c4fed6-e470-4395-9835-0d921e0adf99'
+    definition: '41'
+    buildVersionToDownload: 'latest'
+    targetPath: '$(Pipeline.Workspace)'
+    
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)'
@@ -21,7 +29,6 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
     replaceExistingArchive: true
-    verbose: # Optional
 
 - task: AzureRMWebAppDeployment@4
   displayName: Azure App Service Deploy
