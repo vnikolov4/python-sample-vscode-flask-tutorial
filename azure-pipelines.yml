@@ -17,8 +17,8 @@ steps:
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
-    project: 'f6c4fed6-e470-4395-9835-0d921e0adf99'
-    definition: '41'
+    project: '67226026-7e22-45b9-9cbb-639b752200f1'
+    definition: '9'
     buildVersionToDownload: 'latest'
     targetPath: '$(Pipeline.Workspace)'
     
